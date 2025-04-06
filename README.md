@@ -1,6 +1,21 @@
 # KubeVirt JavaScript SDK
 
-A JavaScript SDK for interacting with the KubeVirt API.
+A comprehensive JavaScript SDK for interacting with the KubeVirt API. This library provides a simple and intuitive interface for managing virtual machines and related resources in a Kubernetes cluster.
+
+## Features
+
+- Full support for KubeVirt API operations
+- TypeScript support with type definitions
+- Modern ES6+ JavaScript
+- Promise-based API
+- Comprehensive documentation
+- Built-in error handling
+- Support for all KubeVirt resources:
+  - Virtual Machines
+  - Virtual Machine Instances
+  - Virtual Machine Instance Migrations
+  - Virtual Machine Instance Presets
+  - Virtual Machine Instance ReplicaSets
 
 ## Installation
 
@@ -21,16 +36,15 @@ const client = new KubeVirtClient({
   }
 });
 
-// List virtual machines in a namespace
-const vms = await client.virtualMachine.list('default');
-
-// Get a specific virtual machine
-const vm = await client.virtualMachine.get('default', 'my-vm');
+// List all virtual machines
+const vms = await client.virtualMachine.listAllNamespaces();
 
 // Create a new virtual machine
-const newVm = await client.virtualMachine.create('default', {
+const newVM = await client.virtualMachine.create('default', {
+  apiVersion: 'kubevirt.io/v1',
+  kind: 'VirtualMachine',
   metadata: {
-    name: 'new-vm'
+    name: 'test-vm'
   },
   spec: {
     // VM specification
@@ -38,57 +52,72 @@ const newVm = await client.virtualMachine.create('default', {
 });
 
 // Start a virtual machine
-await client.virtualMachine.start('default', 'my-vm');
-
-// Get virtual machine instance details
-const vmi = await client.virtualMachineInstance.get('default', 'my-vm');
-
-// Get VNC connection details
-const vnc = await client.virtualMachineInstance.getVNC('default', 'my-vm');
-
-// Create a migration
-const migration = await client.virtualMachineInstanceMigration.create('default', {
-  metadata: {
-    name: 'migration-1'
-  },
-  spec: {
-    vmiName: 'my-vm'
-  }
-});
+await client.virtualMachine.start('default', 'test-vm');
 ```
 
-## API Reference
+## API Documentation
 
-### Virtual Machine Operations
+For detailed API documentation, please refer to the [API Reference](https://kubevirt.io/api-reference/).
 
-- `list(namespace)`: List all virtual machines in a namespace
-- `get(namespace, name)`: Get a virtual machine by name
-- `create(namespace, vm)`: Create a new virtual machine
-- `update(namespace, name, vm)`: Update a virtual machine
-- `delete(namespace, name)`: Delete a virtual machine
-- `start(namespace, name)`: Start a virtual machine
-- `stop(namespace, name)`: Stop a virtual machine
-- `restart(namespace, name)`: Restart a virtual machine
+## Development
 
-### Virtual Machine Instance Operations
+### Prerequisites
 
-- `list(namespace)`: List all virtual machine instances in a namespace
-- `get(namespace, name)`: Get a virtual machine instance by name
-- `delete(namespace, name)`: Delete a virtual machine instance
-- `getConsole(namespace, name)`: Get the console of a virtual machine instance
-- `getVNC(namespace, name)`: Get the VNC connection details
-- `getGuestOSInfo(namespace, name)`: Get the guest OS information
-- `getUserList(namespace, name)`: Get the user list
-- `getFilesystemList(namespace, name)`: Get the filesystem list
+- Node.js >= 14.0.0
+- npm >= 6.0.0
 
-### Virtual Machine Instance Migration Operations
+### Setup
 
-- `list(namespace)`: List all migrations in a namespace
-- `get(namespace, name)`: Get a migration by name
-- `create(namespace, migration)`: Create a new migration
-- `delete(namespace, name)`: Delete a migration
-- `cancel(namespace, name)`: Cancel a migration
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Building
+
+```bash
+npm run build
+```
+
+### Testing
+
+```bash
+npm test
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## Publishing
+
+This package is automatically published to npm using GitHub Actions:
+
+- Pushes to the `main` branch are published with the `latest` tag
+- Tagged releases (e.g., `v1.0.0`) are published with the corresponding version tag
+
+To create a new release:
+
+1. Update the version in `package.json`
+2. Create a new tag:
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+
+The GitHub Actions workflow will automatically publish the package to npm.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions, please open an issue in the GitHub repository. 
