@@ -8,7 +8,7 @@ import { BaseAPI } from './base.js';
 export class VirtualMachine extends BaseAPI {
   /**
    * List virtual machines across all namespaces
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -26,7 +26,7 @@ export class VirtualMachine extends BaseAPI {
   /**
    * List virtual machines in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -45,7 +45,7 @@ export class VirtualMachine extends BaseAPI {
    * Get a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @returns {Promise<Object>} Virtual machine
    */
@@ -56,12 +56,12 @@ export class VirtualMachine extends BaseAPI {
   /**
    * Create a new virtual machine
    * @param {string} namespace - Namespace
-   * @param {Object} vm - Virtual machine
+   * @param {object} vm - Virtual machine
    * @param {string} [vm.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [vm.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [vm.metadata] - Standard object's metadata
-   * @param {Object} vm.spec - Virtual machine specification
-   * @param {Object} [vm.status] - Virtual machine status
+   * @param {object} [vm.metadata] - Standard object's metadata
+   * @param {object} vm.spec - Virtual machine specification
+   * @param {object} [vm.status] - Virtual machine status
    * @returns {Promise<Object>} Created virtual machine
    */
   async create(namespace, vm) {
@@ -72,13 +72,13 @@ export class VirtualMachine extends BaseAPI {
    * Update a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} vm - Updated virtual machine
+   * @param {object} vm - Updated virtual machine
    * @param {string} [vm.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [vm.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [vm.metadata] - Standard object's metadata
-   * @param {Object} vm.spec - Virtual machine specification
-   * @param {Object} [vm.status] - Virtual machine status
-   * @param {Object} params - Query parameters
+   * @param {object} [vm.metadata] - Standard object's metadata
+   * @param {object} vm.spec - Virtual machine specification
+   * @param {object} [vm.status] - Virtual machine status
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Updated virtual machine
@@ -91,7 +91,7 @@ export class VirtualMachine extends BaseAPI {
    * Delete a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
@@ -106,7 +106,7 @@ export class VirtualMachine extends BaseAPI {
    * Start a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Start response
@@ -119,7 +119,7 @@ export class VirtualMachine extends BaseAPI {
    * Stop a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Stop response
@@ -132,7 +132,7 @@ export class VirtualMachine extends BaseAPI {
    * Restart a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Restart response
@@ -144,7 +144,7 @@ export class VirtualMachine extends BaseAPI {
   /**
    * Delete all virtual machines in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -162,13 +162,13 @@ export class VirtualMachine extends BaseAPI {
    * Replace a virtual machine
    * @param {string} namespace - Namespace
    * @param {string} name - Virtual machine name
-   * @param {Object} vm - Updated virtual machine
+   * @param {object} vm - Updated virtual machine
    * @param {string} [vm.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [vm.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [vm.metadata] - Standard object's metadata
-   * @param {Object} vm.spec - Virtual machine specification
-   * @param {Object} [vm.status] - Virtual machine status
-   * @param {Object} params - Query parameters
+   * @param {object} [vm.metadata] - Standard object's metadata
+   * @param {object} vm.spec - Virtual machine specification
+   * @param {object} [vm.status] - Virtual machine status
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Updated virtual machine
@@ -180,7 +180,7 @@ export class VirtualMachine extends BaseAPI {
   /**
    * Watch virtual machines across all namespaces
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -198,7 +198,7 @@ export class VirtualMachine extends BaseAPI {
    * Watch virtual machines in a namespace
    * @param {string} namespace - Namespace
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response

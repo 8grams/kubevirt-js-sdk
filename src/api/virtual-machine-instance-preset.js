@@ -8,7 +8,7 @@ import { BaseAPI } from './base.js';
 export class VirtualMachineInstancePreset extends BaseAPI {
   /**
    * List virtual machine instance presets across all namespaces
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -26,12 +26,12 @@ export class VirtualMachineInstancePreset extends BaseAPI {
   /**
    * Create a new virtual machine instance preset
    * @param {string} namespace - Namespace
-   * @param {Object} preset - Virtual machine instance preset
+   * @param {object} preset - Virtual machine instance preset
    * @param {string} [preset.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [preset.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [preset.metadata] - Standard object's metadata
-   * @param {Object} preset.spec - Virtual machine instance preset specification
-   * @param {Object} [preset.status] - Virtual machine instance preset status
+   * @param {object} [preset.metadata] - Standard object's metadata
+   * @param {object} preset.spec - Virtual machine instance preset specification
+   * @param {object} [preset.status] - Virtual machine instance preset status
    * @returns {Promise<Object>} Created virtual machine instance preset
    */
   async create(namespace, preset) {
@@ -41,7 +41,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
   /**
    * List virtual machine instance presets in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -59,7 +59,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
   /**
    * Delete all virtual machine instance presets in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -77,7 +77,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
    * Get a virtual machine instance preset
    * @param {string} namespace - Namespace
    * @param {string} name - Preset name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @returns {Promise<Object>} Virtual machine instance preset
    */
@@ -89,13 +89,13 @@ export class VirtualMachineInstancePreset extends BaseAPI {
    * Replace a virtual machine instance preset
    * @param {string} namespace - Namespace
    * @param {string} name - Preset name
-   * @param {Object} preset - Updated virtual machine instance preset
+   * @param {object} preset - Updated virtual machine instance preset
    * @param {string} [preset.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [preset.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [preset.metadata] - Standard object's metadata
-   * @param {Object} preset.spec - Virtual machine instance preset specification
-   * @param {Object} [preset.status] - Virtual machine instance preset status
-   * @param {Object} params - Query parameters
+   * @param {object} [preset.metadata] - Standard object's metadata
+   * @param {object} preset.spec - Virtual machine instance preset specification
+   * @param {object} [preset.status] - Virtual machine instance preset status
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Updated virtual machine instance preset
@@ -108,7 +108,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
    * Delete a virtual machine instance preset
    * @param {string} namespace - Namespace
    * @param {string} name - Preset name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
@@ -122,7 +122,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
   /**
    * Watch virtual machine instance presets across all namespaces
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -140,7 +140,7 @@ export class VirtualMachineInstancePreset extends BaseAPI {
    * Watch virtual machine instance presets in a namespace
    * @param {string} namespace - Namespace
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response

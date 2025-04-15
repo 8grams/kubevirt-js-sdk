@@ -8,7 +8,7 @@ import { BaseAPI } from './base.js';
 export class KubeVirt extends BaseAPI {
   /**
    * Get API resources
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @returns {Promise<Object>} API resources
    */
@@ -18,7 +18,7 @@ export class KubeVirt extends BaseAPI {
 
   /**
    * List KubeVirt resources across all namespaces
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -36,12 +36,12 @@ export class KubeVirt extends BaseAPI {
   /**
    * Create a KubeVirt object
    * @param {string} namespace - Object name and auth scope, such as for teams and projects
-   * @param {Object} kubevirt - KubeVirt object
+   * @param {object} kubevirt - KubeVirt object
    * @param {string} [kubevirt.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [kubevirt.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [kubevirt.metadata] - Standard object's metadata
-   * @param {Object} kubevirt.spec - KubeVirt specification
-   * @param {Object} [kubevirt.status] - KubeVirt status
+   * @param {object} [kubevirt.metadata] - Standard object's metadata
+   * @param {object} kubevirt.spec - KubeVirt specification
+   * @param {object} [kubevirt.status] - KubeVirt status
    * @returns {Promise<Object>} Created KubeVirt object
    */
   async create(namespace, kubevirt) {
@@ -51,7 +51,7 @@ export class KubeVirt extends BaseAPI {
   /**
    * List KubeVirt resources in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -69,7 +69,7 @@ export class KubeVirt extends BaseAPI {
   /**
    * Delete all KubeVirt resources in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -87,7 +87,7 @@ export class KubeVirt extends BaseAPI {
    * Get a KubeVirt resource
    * @param {string} namespace - Namespace
    * @param {string} name - Resource name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @returns {Promise<Object>} KubeVirt resource
    */
@@ -99,13 +99,13 @@ export class KubeVirt extends BaseAPI {
    * Replace a KubeVirt resource
    * @param {string} namespace - Namespace
    * @param {string} name - Resource name
-   * @param {Object} kubevirt - Updated KubeVirt resource
+   * @param {object} kubevirt - Updated KubeVirt resource
    * @param {string} [kubevirt.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [kubevirt.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [kubevirt.metadata] - Standard object's metadata
-   * @param {Object} kubevirt.spec - KubeVirt specification
-   * @param {Object} [kubevirt.status] - KubeVirt status
-   * @param {Object} params - Query parameters
+   * @param {object} [kubevirt.metadata] - Standard object's metadata
+   * @param {object} kubevirt.spec - KubeVirt specification
+   * @param {object} [kubevirt.status] - KubeVirt status
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Updated KubeVirt resource
@@ -118,7 +118,7 @@ export class KubeVirt extends BaseAPI {
    * Delete a KubeVirt resource
    * @param {string} namespace - Namespace
    * @param {string} name - Resource name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
@@ -132,7 +132,7 @@ export class KubeVirt extends BaseAPI {
   /**
    * Watch KubeVirt resources across all namespaces
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -150,7 +150,7 @@ export class KubeVirt extends BaseAPI {
    * Watch KubeVirt resources in a namespace
    * @param {string} namespace - Namespace
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response

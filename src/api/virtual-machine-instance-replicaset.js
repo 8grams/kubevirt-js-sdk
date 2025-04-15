@@ -8,7 +8,7 @@ import { BaseAPI } from './base.js';
 export class VirtualMachineInstanceReplicaSet extends BaseAPI {
   /**
    * List virtual machine instance replicasets across all namespaces
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -26,12 +26,12 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
   /**
    * Create a new virtual machine instance replicaset
    * @param {string} namespace - Namespace
-   * @param {Object} replicaset - Virtual machine instance replicaset
+   * @param {object} replicaset - Virtual machine instance replicaset
    * @param {string} [replicaset.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [replicaset.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [replicaset.metadata] - Standard object's metadata
-   * @param {Object} replicaset.spec - Virtual machine instance replicaset specification
-   * @param {Object} [replicaset.status] - Virtual machine instance replicaset status
+   * @param {object} [replicaset.metadata] - Standard object's metadata
+   * @param {object} replicaset.spec - Virtual machine instance replicaset specification
+   * @param {object} [replicaset.status] - Virtual machine instance replicaset status
    * @returns {Promise<Object>} Created virtual machine instance replicaset
    */
   async create(namespace, replicaset) {
@@ -41,7 +41,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
   /**
    * List virtual machine instance replicasets in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -59,7 +59,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
   /**
    * Delete all virtual machine instance replicasets in a namespace
    * @param {string} namespace - Namespace
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -77,7 +77,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
    * Get a virtual machine instance replicaset
    * @param {string} namespace - Namespace
    * @param {string} name - Replicaset name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @returns {Promise<Object>} Virtual machine instance replicaset
    */
@@ -89,13 +89,13 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
    * Replace a virtual machine instance replicaset
    * @param {string} namespace - Namespace
    * @param {string} name - Replicaset name
-   * @param {Object} replicaset - Updated virtual machine instance replicaset
+   * @param {object} replicaset - Updated virtual machine instance replicaset
    * @param {string} [replicaset.apiVersion] - APIVersion defines the versioned schema of this representation of an object
    * @param {string} [replicaset.kind] - Kind is a string value representing the REST resource this object represents
-   * @param {Object} [replicaset.metadata] - Standard object's metadata
-   * @param {Object} replicaset.spec - Virtual machine instance replicaset specification
-   * @param {Object} [replicaset.status] - Virtual machine instance replicaset status
-   * @param {Object} params - Query parameters
+   * @param {object} [replicaset.metadata] - Standard object's metadata
+   * @param {object} replicaset.spec - Virtual machine instance replicaset specification
+   * @param {object} [replicaset.status] - Virtual machine instance replicaset status
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @returns {Promise<Object>} Updated virtual machine instance replicaset
@@ -108,7 +108,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
    * Delete a virtual machine instance replicaset
    * @param {string} namespace - Namespace
    * @param {string} name - Replicaset name
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
@@ -122,7 +122,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
   /**
    * Watch virtual machine instance replicasets across all namespaces
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response
@@ -140,7 +140,7 @@ export class VirtualMachineInstanceReplicaSet extends BaseAPI {
    * Watch virtual machine instance replicasets in a namespace
    * @param {string} namespace - Namespace
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @param {string} [params.continue] - The continue option should be set when retrieving more results from the server
    * @param {string} [params.fieldSelector] - A selector to restrict the list of returned objects by their fields
    * @param {boolean} [params.includeUninitialized] - If true, partially initialized resources are included in the response

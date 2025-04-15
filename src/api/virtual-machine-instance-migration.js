@@ -36,7 +36,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
   /**
    * Create a new virtual machine instance migration
    * @param {string} namespace - Namespace
-   * @param {Object} migration - Virtual machine instance migration specification
+   * @param {object} migration - Virtual machine instance migration specification
    * @returns {Promise<Object>} Created virtual machine instance migration
    */
   async create(namespace, migration) {
@@ -56,7 +56,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * Replace a virtual machine instance migration
    * @param {string} namespace - Namespace
    * @param {string} name - Migration name
-   * @param {Object} migration - Updated virtual machine instance migration specification
+   * @param {object} migration - Updated virtual machine instance migration specification
    * @returns {Promise<Object>} Updated virtual machine instance migration
    */
   async replace(namespace, name, migration) {

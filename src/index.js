@@ -17,9 +17,9 @@ import { VirtualMachineInstanceReplicaSet } from './api/virtual-machine-instance
 export class KubeVirtClient {
   /**
    * Create a new KubeVirt client
-   * @param {Object} config - Client configuration
+   * @param {object} config - Client configuration
    * @param {string} config.baseURL - Base URL for the KubeVirt API
-   * @param {Object} config.headers - Custom headers to be sent with each request
+   * @param {object} config.headers - Custom headers to be sent with each request
    */
   constructor(config) {
     this.config = {

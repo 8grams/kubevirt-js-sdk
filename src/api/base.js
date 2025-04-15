@@ -5,9 +5,9 @@
 export class BaseAPI {
   /**
    * Create a new API client
-   * @param {Object} config - Client configuration
+   * @param {object} config - Client configuration
    * @param {string} config.baseURL - Base URL for the API
-   * @param {Object} config.headers - Custom headers to be sent with each request
+   * @param {object} config.headers - Custom headers to be sent with each request
    */
   constructor(config) {
     this.config = config;
@@ -16,7 +16,7 @@ export class BaseAPI {
   /**
    * Build URL with query parameters
    * @param {string} path - API path
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @returns {string} URL with query parameters
    */
   buildURL(path, params = {}) {
@@ -32,7 +32,7 @@ export class BaseAPI {
   /**
    * Get a KubeVirt API GroupList
    * @param {string} path - API path
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @returns {Promise<Object>} API response
    */
   async get(path, params = {}) {
@@ -46,8 +46,8 @@ export class BaseAPI {
   /**
    * Create a new resource
    * @param {string} path - API path
-   * @param {Object} data - Resource data
-   * @param {Object} params - Query parameters
+   * @param {object} data - Resource data
+   * @param {object} params - Query parameters
    * @returns {Promise<Object>} API response
    */
   async post(path, data, params = {}) {
@@ -62,8 +62,8 @@ export class BaseAPI {
   /**
    * Update an existing resource
    * @param {string} path - API path
-   * @param {Object} data - Resource data
-   * @param {Object} params - Query parameters
+   * @param {object} data - Resource data
+   * @param {object} params - Query parameters
    * @returns {Promise<Object>} API response
    */
   async put(path, data, params = {}) {
@@ -78,7 +78,7 @@ export class BaseAPI {
   /**
    * Delete a resource
    * @param {string} path - API path
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @returns {Promise<Object>} API response
    */
   async delete(path, params = {}) {
@@ -93,7 +93,7 @@ export class BaseAPI {
    * Watch resources
    * @param {string} path - API path
    * @param {Function} onEvent - Callback function for events
-   * @param {Object} params - Query parameters
+   * @param {object} params - Query parameters
    * @returns {Promise<Object>} Watch response
    */
   async watch(path, onEvent, params = {}) {
