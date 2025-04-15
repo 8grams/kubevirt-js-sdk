@@ -3,7 +3,7 @@ import { BaseAPI } from './base.js';
 /**
  * Virtual Machine API client
  * @class
- * @extends BaseAPI
+ * @augments BaseAPI
  */
 export class VirtualMachine extends BaseAPI {
   /**
@@ -17,7 +17,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
    * @param {boolean} [params.watch] - Watch for changes to the described resources
-   * @returns {Promise<Object>} List of virtual machines
+   * @returns {Promise<object>} List of virtual machines
    */
   async listAllNamespaces(params = {}) {
     return this.get('/apis/kubevirt.io/v1/virtualmachines', params);
@@ -35,7 +35,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
    * @param {boolean} [params.watch] - Watch for changes to the described resources
-   * @returns {Promise<Object>} List of virtual machines
+   * @returns {Promise<object>} List of virtual machines
    */
   async list(namespace, params = {}) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines`, params);
@@ -47,7 +47,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {string} name - Virtual machine name
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
-   * @returns {Promise<Object>} Virtual machine
+   * @returns {Promise<object>} Virtual machine
    */
   async get(namespace, name, params = {}) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}`, params);
@@ -62,7 +62,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} [vm.metadata] - Standard object's metadata
    * @param {object} vm.spec - Virtual machine specification
    * @param {object} [vm.status] - Virtual machine status
-   * @returns {Promise<Object>} Created virtual machine
+   * @returns {Promise<object>} Created virtual machine
    */
   async create(namespace, vm) {
     return this.post(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines`, vm);
@@ -81,7 +81,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Updated virtual machine
+   * @returns {Promise<object>} Updated virtual machine
    */
   async update(namespace, name, vm, params = {}) {
     return this.patch(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}`, vm, params);
@@ -96,7 +96,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
    * @param {string} [params.propagationPolicy] - Whether and how garbage collection will be performed
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async delete(namespace, name, params = {}) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}`, params);
@@ -109,7 +109,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Start response
+   * @returns {Promise<object>} Start response
    */
   async start(namespace, name, params = {}) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}/start`, null, params);
@@ -122,7 +122,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Stop response
+   * @returns {Promise<object>} Stop response
    */
   async stop(namespace, name, params = {}) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}/stop`, null, params);
@@ -135,7 +135,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Restart response
+   * @returns {Promise<object>} Restart response
    */
   async restart(namespace, name, params = {}) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}/restart`, null, params);
@@ -152,7 +152,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async deleteCollection(namespace, params = {}) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines`, params);
@@ -171,7 +171,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Updated virtual machine
+   * @returns {Promise<object>} Updated virtual machine
    */
   async replace(namespace, name, vm, params = {}) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachines/${name}`, vm, params);
@@ -188,7 +188,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watchAllNamespaces(onEvent, params = {}) {
     return this.watch('/apis/kubevirt.io/v1/watch/virtualmachines', onEvent, params);
@@ -206,7 +206,7 @@ export class VirtualMachine extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watch(namespace, onEvent, params = {}) {
     return this.watch(`/apis/kubevirt.io/v1/watch/namespaces/${namespace}/virtualmachines`, onEvent, params);

@@ -3,14 +3,14 @@ import { BaseAPI } from './base.js';
 /**
  * KubeVirt API client
  * @class
- * @extends BaseAPI
+ * @augments BaseAPI
  */
 export class KubeVirt extends BaseAPI {
   /**
    * Get API resources
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
-   * @returns {Promise<Object>} API resources
+   * @returns {Promise<object>} API resources
    */
   async getAPIResources(params = {}) {
     return this.get('/apis/kubevirt.io/v1/', params);
@@ -27,7 +27,7 @@ export class KubeVirt extends BaseAPI {
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
    * @param {boolean} [params.watch] - Watch for changes to the described resources
-   * @returns {Promise<Object>} List of KubeVirt resources
+   * @returns {Promise<object>} List of KubeVirt resources
    */
   async listAllNamespaces(params = {}) {
     return this.get('/apis/kubevirt.io/v1/kubevirt', params);
@@ -42,7 +42,7 @@ export class KubeVirt extends BaseAPI {
    * @param {object} [kubevirt.metadata] - Standard object's metadata
    * @param {object} kubevirt.spec - KubeVirt specification
    * @param {object} [kubevirt.status] - KubeVirt status
-   * @returns {Promise<Object>} Created KubeVirt object
+   * @returns {Promise<object>} Created KubeVirt object
    */
   async create(namespace, kubevirt) {
     return this.post(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt`, kubevirt);
@@ -60,7 +60,7 @@ export class KubeVirt extends BaseAPI {
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
    * @param {boolean} [params.watch] - Watch for changes to the described resources
-   * @returns {Promise<Object>} List of KubeVirt resources
+   * @returns {Promise<object>} List of KubeVirt resources
    */
   async list(namespace, params = {}) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt`, params);
@@ -77,7 +77,7 @@ export class KubeVirt extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async deleteCollection(namespace, params = {}) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt`, params);
@@ -89,7 +89,7 @@ export class KubeVirt extends BaseAPI {
    * @param {string} name - Resource name
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
-   * @returns {Promise<Object>} KubeVirt resource
+   * @returns {Promise<object>} KubeVirt resource
    */
   async get(namespace, name, params = {}) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt/${name}`, params);
@@ -108,7 +108,7 @@ export class KubeVirt extends BaseAPI {
    * @param {object} params - Query parameters
    * @param {string} [params.pretty] - If 'true', then the output is pretty printed
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
-   * @returns {Promise<Object>} Updated KubeVirt resource
+   * @returns {Promise<object>} Updated KubeVirt resource
    */
   async replace(namespace, name, kubevirt, params = {}) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt/${name}`, kubevirt, params);
@@ -123,7 +123,7 @@ export class KubeVirt extends BaseAPI {
    * @param {string} [params.dryRun] - When present, indicates that modifications should not be persisted
    * @param {number} [params.gracePeriodSeconds] - The duration in seconds before the object should be deleted
    * @param {string} [params.propagationPolicy] - Whether and how garbage collection will be performed
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async delete(namespace, name, params = {}) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/kubevirt/${name}`, params);
@@ -140,7 +140,7 @@ export class KubeVirt extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watchAllNamespaces(onEvent, params = {}) {
     return this.watch('/apis/kubevirt.io/v1/watch/kubevirt', onEvent, params);
@@ -158,7 +158,7 @@ export class KubeVirt extends BaseAPI {
    * @param {number} [params.limit] - Maximum number of responses to return
    * @param {string} [params.resourceVersion] - Shows changes that occur after that particular version of a resource
    * @param {number} [params.timeoutSeconds] - TimeoutSeconds for the list/watch call
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watch(namespace, onEvent, params = {}) {
     return this.watch(`/apis/kubevirt.io/v1/watch/namespaces/${namespace}/kubevirt`, onEvent, params);

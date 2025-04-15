@@ -33,7 +33,7 @@ export class BaseAPI {
    * Get a KubeVirt API GroupList
    * @param {string} path - API path
    * @param {object} params - Query parameters
-   * @returns {Promise<Object>} API response
+   * @returns {Promise<object>} API response
    */
   async get(path, params = {}) {
     const response = await fetch(this.buildURL(path, params), {
@@ -48,7 +48,7 @@ export class BaseAPI {
    * @param {string} path - API path
    * @param {object} data - Resource data
    * @param {object} params - Query parameters
-   * @returns {Promise<Object>} API response
+   * @returns {Promise<object>} API response
    */
   async post(path, data, params = {}) {
     const response = await fetch(this.buildURL(path, params), {
@@ -64,7 +64,7 @@ export class BaseAPI {
    * @param {string} path - API path
    * @param {object} data - Resource data
    * @param {object} params - Query parameters
-   * @returns {Promise<Object>} API response
+   * @returns {Promise<object>} API response
    */
   async put(path, data, params = {}) {
     const response = await fetch(this.buildURL(path, params), {
@@ -79,7 +79,7 @@ export class BaseAPI {
    * Delete a resource
    * @param {string} path - API path
    * @param {object} params - Query parameters
-   * @returns {Promise<Object>} API response
+   * @returns {Promise<object>} API response
    */
   async delete(path, params = {}) {
     const response = await fetch(this.buildURL(path, params), {
@@ -94,7 +94,7 @@ export class BaseAPI {
    * @param {string} path - API path
    * @param {Function} onEvent - Callback function for events
    * @param {object} params - Query parameters
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watch(path, onEvent, params = {}) {
     const response = await fetch(this.buildURL(path, params), {

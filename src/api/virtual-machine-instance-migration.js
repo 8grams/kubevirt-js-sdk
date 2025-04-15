@@ -3,12 +3,12 @@ import { BaseAPI } from './base.js';
 /**
  * Virtual Machine Instance Migration API client
  * @class
- * @extends BaseAPI
+ * @augments BaseAPI
  */
 export class VirtualMachineInstanceMigration extends BaseAPI {
   /**
    * List virtual machine instance migrations across all namespaces
-   * @returns {Promise<Object>} List of virtual machine instance migrations
+   * @returns {Promise<object>} List of virtual machine instance migrations
    */
   async listAllNamespaces() {
     return this.get('/apis/kubevirt.io/v1/virtualmachineinstancemigrations');
@@ -17,7 +17,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
   /**
    * List virtual machine instance migrations in a namespace
    * @param {string} namespace - Namespace
-   * @returns {Promise<Object>} List of virtual machine instance migrations
+   * @returns {Promise<object>} List of virtual machine instance migrations
    */
   async list(namespace) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations`);
@@ -27,7 +27,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * Get a virtual machine instance migration
    * @param {string} namespace - Namespace
    * @param {string} name - Migration name
-   * @returns {Promise<Object>} Virtual machine instance migration
+   * @returns {Promise<object>} Virtual machine instance migration
    */
   async get(namespace, name) {
     return this.get(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations/${name}`);
@@ -37,7 +37,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * Create a new virtual machine instance migration
    * @param {string} namespace - Namespace
    * @param {object} migration - Virtual machine instance migration specification
-   * @returns {Promise<Object>} Created virtual machine instance migration
+   * @returns {Promise<object>} Created virtual machine instance migration
    */
   async create(namespace, migration) {
     return this.post(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations`, migration);
@@ -46,7 +46,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
   /**
    * Delete all virtual machine instance migrations in a namespace
    * @param {string} namespace - Namespace
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async deleteCollection(namespace) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations`);
@@ -57,7 +57,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * @param {string} namespace - Namespace
    * @param {string} name - Migration name
    * @param {object} migration - Updated virtual machine instance migration specification
-   * @returns {Promise<Object>} Updated virtual machine instance migration
+   * @returns {Promise<object>} Updated virtual machine instance migration
    */
   async replace(namespace, name, migration) {
     return this.put(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations/${name}`, migration);
@@ -67,7 +67,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * Delete a virtual machine instance migration
    * @param {string} namespace - Namespace
    * @param {string} name - Migration name
-   * @returns {Promise<Object>} Delete response
+   * @returns {Promise<object>} Delete response
    */
   async delete(namespace, name) {
     return this.delete(`/apis/kubevirt.io/v1/namespaces/${namespace}/virtualmachineinstancemigrations/${name}`);
@@ -76,7 +76,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
   /**
    * Watch virtual machine instance migrations across all namespaces
    * @param {Function} onEvent - Callback function for events
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watchAllNamespaces(onEvent) {
     return this.watch('/apis/kubevirt.io/v1/watch/virtualmachineinstancemigrations', onEvent);
@@ -86,7 +86,7 @@ export class VirtualMachineInstanceMigration extends BaseAPI {
    * Watch virtual machine instance migrations in a namespace
    * @param {string} namespace - Namespace
    * @param {Function} onEvent - Callback function for events
-   * @returns {Promise<Object>} Watch response
+   * @returns {Promise<object>} Watch response
    */
   async watch(namespace, onEvent) {
     return this.watch(`/apis/kubevirt.io/v1/watch/namespaces/${namespace}/virtualmachineinstancemigrations`, onEvent);
