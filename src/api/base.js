@@ -108,21 +108,27 @@ export class BaseAPI {
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
 
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
+    try {
+      while (!reader.closed) {
+        const { done, value } = await reader.read();
+        if (done) {
+          break;
+        }
 
-      const chunk = decoder.decode(value);
-      const lines = chunk.split('\n').filter(line => line.trim());
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n').filter(line => line.trim());
 
-      for (const line of lines) {
-        try {
-          const event = JSON.parse(line);
-          onEvent(event);
-        } catch (error) {
-          console.error('Error parsing watch event:', error);
+        for (const line of lines) {
+          try {
+            const event = JSON.parse(line);
+            onEvent(event);
+          } catch (error) {
+            console.error('Error parsing watch event:', error);
+          }
         }
       }
+    } catch (error) {
+      console.error('Error reading watch stream:', error);
     }
 
     return response;
