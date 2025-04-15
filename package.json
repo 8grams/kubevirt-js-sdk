@@ -1,6 +1,6 @@
 {
   "name": "kubevirt-js-sdk",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "JavaScript SDK for KubeVirt API - A comprehensive client library for interacting with KubeVirt API",
   "main": "src/index.js",
   "type": "module",
@@ -10,6 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "build": "rollup -c",
     "test": "jest",
     "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.js",
@@ -23,7 +24,7 @@
     "sdk",
     "javascript"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "8grams <hello@8grams.tech>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -45,5 +46,12 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.40.0"
   }
 }
